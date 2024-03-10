@@ -30,6 +30,24 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .text-primary {
+    color: #00b4d8 !important;
+}
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #00b4d8;
+    margin-right: 10px;
+}
+.footer .btn.btn-link:hover {
+    color:#00b4d8;
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+    </style>
 </head>
 
 <body>
@@ -41,36 +59,12 @@
     <!-- Spinner End -->
 
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                    <a class="text-body px-2" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789</a>
-                    <a class="text-body px-2" href="mailto:info@example.com"><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</a>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-2">
-                    <a class="text-body px-2" href="">Terms</a>
-                    <a class="text-body px-2" href="">Privacy</a>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
 
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="text-primary m-0"><img class="me-3" src="img/icons/icon-1.png" alt="Icon">Arkitektur</h1>
+            <h1 class=" m-0" style="color: #080d29;"><img class="me-3" src="img/icons/image.png" alt="Icon">G-Verified</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -227,23 +221,26 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h3 class="text-light mb-4">Address</h3>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Ontario Canada</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>95614 86909</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-body me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                  
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="text-light mb-4">Services</h3>
-                    <a class="btn btn-link" href="">Architecture</a>
-                    <a class="btn btn-link" href="">3D Animation</a>
-                    <a class="btn btn-link" href="">House Planning</a>
-                    <a class="btn btn-link" href="">Interior Design</a>
-                    <a class="btn btn-link" href="">Construction</a>
+                    <a class="btn btn-link" href="">Marketing Strategy</a>
+                    <a class="btn btn-link" href="">SEO (Search Engine Optimization)</a>
+                    <a class="btn btn-link" href="">Technical SEO</a>
+                    <a class="btn btn-link" href="">Content Strategy & Marketing</a>
+                    <a class="btn btn-link" href="">PPC (Pay Per Click)</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Services</h3>
+                    <a class="btn btn-link" href="">SEM</a>
+                    <a class="btn btn-link" href="">CRO (Conversion Rate Optimization)</a>
+                    <a class="btn btn-link" href="">Web Development</a>
+                    <a class="btn btn-link" href="">Logo Design & Branding</a>
+                    <a class="btn btn-link" href="">Analytics & Attribution</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="text-light mb-4">Quick Links</h3>
@@ -252,18 +249,10 @@
                     <a class="btn btn-link" href="">Our Services</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="text-light mb-4">Newsletter</h3>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- Footer End -->
 
 
