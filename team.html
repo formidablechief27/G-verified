@@ -31,6 +31,137 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
+         .member {
+                transition: transform 0.3s ease-in-out;
+                position: relative;
+            }
+
+            /* Hover effect */
+            .member:hover {
+                transform: translateY(-7px);
+                /* Move the member up on hover */
+            }
+
+            .member:hover::before {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+
+                z-index: -1;
+            }
+
+            .team-bg {
+
+                overflow: hidden;
+            }
+
+            .team .section-title {
+                padding-bottom: 0px;
+            }
+
+            .team .section-title .main-team-subheading {
+                font-size: 14px;
+                font-weight: 500;
+                padding: 0;
+                line-height: 1px;
+                margin: 0 0 5px 0;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: #aaaaaa;
+            }
+
+
+            .team .member {
+                position: relative;
+                margin: 5px;
+                padding: 30px;
+                border-radius: 10px;
+                background: #fff;
+                border: 3px solid #08b1d7;
+            }
+
+            .team .member .pic {
+                overflow: hidden;
+                width: 100px;
+                border-radius: 4px;
+            }
+
+            .team .member .member-info {
+                padding-left: 30px;
+            }
+
+            .team .member .member-heading {
+
+                margin-bottom: 5px;
+                font-size: 30px;
+                color: #556270;
+                line-height: 1.2;
+
+            }
+
+            .team .member span {
+                display: block;
+                font-size: 20px;
+                padding-bottom: 10px;
+                position: relative;
+                font-weight: 500;
+                color: #08b1d7;
+            }
+
+            .team .member span::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 50px;
+                height: 1px;
+                background: #dee2e6;
+                bottom: 0;
+                left: 0;
+            }
+
+            .team .member .member-para {
+                margin: 10px 0 0 0;
+                font-size: 14px;
+            }
+
+            .team .member .social {
+                margin-top: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .team .member .social a {
+                transition: ease-in-out 0.3s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                width: 32px;
+                height: 32px;
+                background: #8795a4;
+            }
+
+            .team .member .social a+a {
+                margin-left: 8px;
+            }
+
+            .team .member .social a:hover {
+                background: #41A1FD;
+            }
+
+            .team .member .social a .team-icon {
+                color: #fff;
+                font-size: 16px;
+                margin: 0 2px;
+            }
+
+            .text-primary {
+                color: #00b4d8 !important;
+            }
         .text-primary {
     color: #00b4d8 !important;
 }
@@ -101,144 +232,130 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <section id="team" class="team team-bg py-5">
         <div class="container">
+
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h4 class="section-title">Team Members</h4>
-                <h1 class="display-5 mb-4">We Are Creative Architecture Team For Your Dream Home</h1>
+                <h1 class="display-5 mb-4">We Are Dedicated Team </h1>
             </div>
-            <div class="row g-0 team-items">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+
+            <div class="row">
+
+                <div class="col-lg-6 mx-auto">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h1 class="member-heading"> <strong style="font-weight: 700;color: black;">Harsh
+                                    Mishra</strong> </h1>
+                            <span>Managing Director</span>
+                            <p class="member-para">Introducing Harsh Mishra, our esteemed partner and the face of
+                                our company. With 5 years of experience in sales and client management, Harsh brings
+                                a wealth of personal expertise to the table. As a true leader, Harsh serves as a
+                                link between investors, partners, clients, and employees, ensuring smooth
+                                communication and collaboration. Leading from the front, Harsh's continuous efforts
+                                drive our company's success. </p>
+                            <div class="social">
+
+                                <a href=""><i class="fab fa-instagram team-icon"></i></a>
+                                <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
                             </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+
+
+                <div class="col-lg-6 mx-auto">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h1 class="member-heading"> <strong style="font-weight: 700;color: black;">Pratham
+                                    Shah</strong> </h1>
+                            <span>Senior Analyst</span>
+                            <p class="member-para">Meet Pratham Shah, our star performer and media expert with 3
+                                years of experience. In a short span of time, Pratham has proven to be an invaluable
+                                asset to our team. With a combination of hard work, dedication, and a knack for
+                                teamwork, Pratham consistently delivers outstanding results. Whether it's crafting
+                                compelling media strategies or leading the way in executing successful campaigns,
+                                Pratham's expertise shines through. </p>
+                            <div class="social">
+
+                                <a href=""><i class="fab fa-instagram team-icon"></i></a>
+                                <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
                             </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+
+                <div class="col-lg-6 mx-auto">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h1 class="member-heading"><strong style="font-weight: 700;color: black;">Nabil
+                                    Khan</strong> </h1>
+                            <span>Sales Manager </span>
+                            <p class="member-para">Meet Nabil Khan, our stellar sales expert with 8 years of
+                                experience in the field. With his impressive track record and knack for building
+                                strong client relationships, Nabil is the driving force behind our sales success.
+                                His dedication, expertise, and passion for delivering exceptional service make him
+                                an invaluable member of our team. </p>
+                            <div class="social">
+
+                                <a href=""><i class="fab fa-instagram team-icon"></i></a>
+                                <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
                             </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+
+
+                <div class="col-lg-6 mx-auto">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h1 class="member-heading"><strong style="font-weight: 700;color: black;">Harshita
+                                    Chiplunkar</strong> </h1>
+
+                            <span> Senior Executive</span>
+                            <p class="member-para">Meet Harshita Chiplunkar, our brilliant analyst with a
+                                remarkable 6-year journey in the field. Harshita's analytical prowess combined with
+                                her creative thinking sets her apart as a true asset to our company. With her keen
+                                eye for detail and innovative mindset, she consistently brings fresh perspectives to
+                                our projects.</p>
+                            <div class="social">
+
+                                <a href=""><i class="fab fa-instagram team-icon"></i></a>
+                                <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
                             </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                <div class="col-lg-6 mx-auto">
+                    <div class="member d-flex align-items-start">
+                        <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h1 class="member-heading"> <strong style="font-weight: 700;color: black;"> Mukesh
+                                    Bissa</strong> </h1>
+                            <span>Partner </span>
+                            <p class="member-para">Meet Mukesh Bissa, our incredible sleeping partner who plays a
+                                major role in driving our company's growth. With a keen focus on expanding our
+                                presence in the United States and Canada, Mukesh has been instrumental in helping
+                                our company thrive in these markets. His strategic insights and contributions have
+                                been invaluable to our success. </p>
+                            <div class="social">
+
+                                <a href=""><i class="fab fa-instagram team-icon"></i></a>
+                                <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
                             </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h3 class="mt-2">Architect Name</h3>
-                            <span class="text-primary">Designation</span>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
+
         </div>
-    </div>
+    </section>
     <!-- Team End -->
         
 
