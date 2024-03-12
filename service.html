@@ -36,7 +36,120 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
+      .star-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .star {
+                height: 20px;
+                width: 20px;
+                margin: 0 2px;
+                margin-bottom: 15px;
+            }
+
+            .col-center {
+                margin: 0 auto;
+                float: none !important;
+            }
+
+            .carousel {
+                margin: 50px auto;
+                padding: 0 70px;
+            }
+
+            .carousel-item {
+
+                font-size: 14px;
+                text-align: center;
+                overflow: hidden;
+                min-height: 290px;
+            }
+
+            .carousel .item .img-box {
+                width: 135px;
+                height: 135px;
+                margin: 0 auto;
+                padding: 5px;
+                border: 1px solid #ddd;
+                border-radius: 50%;
+            }
+
+            .carousel .img-box img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                border-radius: 50%;
+            }
+
+            .carousel .testimonial {
+                padding: 30px 0 10px;
+            }
+
+            .carousel .overview {
+                font-style: italic;
+            }
+
+            .carousel .overview b {
+                text-transform: uppercase;
+                color: #db584e;
+            }
+
+            .carousel .carousel-control {
+                width: 40px;
+                height: 40px;
+                margin-top: -20px;
+                top: 50%;
+                background: none;
+            }
+
+            .carousel-control i {
+                font-size: 68px;
+                line-height: 42px;
+                position: absolute;
+                display: inline-block;
+                color: rgba(0, 0, 0, 0.8);
+                text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+            }
+
+            .carousel .carousel-indicators {
+                bottom: -40px;
+            }
+
+            .carousel-indicators li,
+            .carousel-indicators li.active {
+                width: 10px;
+                height: 10px;
+                margin: 1px 3px;
+                border-radius: 50%;
+            }
+
+            .carousel-indicators li {
+                background: #999;
+                border-color: transparent;
+                box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .section-title {
+                color: #00b4d8;
+
+            }
+
+            .carousel-indicators li.active {
+                background: #555;
+                box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .owl-carousel-inner {
+                background: rgb(0 0 0 / 82%);
+            }
+
         .text-primary {
     color: #00b4d8 !important;
 }
@@ -595,31 +708,62 @@
     <!-- Plans End -->
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h4 class="section-title">Testimonial</h4>
-                <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-1.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
-                </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
-                </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
-                </div>
-            </div>      
-        </div>
-    </div>
+    <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-8 col-center m-auto">
+              <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                  <h4 class="section-title">Testimonial</h4>
+                  <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
+              </div>
+              <div id="nyCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Carousel -->
+                  <div class="carousel-inner">
+                      <div class="item carousel-item active">
+                          <div class="img-box"><img src="img/user.png" alt=""></div>
+                          <p class="testimonial">Their team is one of a kind in the marketing industry. They are
+                              extremely
+                              responsive at almost any time of the day and they truly care about your business
+                              like it's
+                              their own. Based on other reviews, I now know that I am not the only one who feels
+                              this
+                              way.</p>
+                          <div class="star-section">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                          </div>
+                          <h1 style="color: #00b4d8;">David Wood</h1>
+                      </div>
+                      <div class="item carousel-item">
+                          <div class="img-box"><img src="img/user.png" alt=""></div>
+                          <p class="testimonial">The team at this digital marketing agency stands out for their
+                              exceptional service. They work with speed and dedication to achieve your desired
+                              outcomes. Moreover, their innovative approach and deep understanding of current
+                              strategies and trends contribute significantly to the uniqueness of their successful
+                              strategy</p>
+                          <div class="star-section">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                              <img src="img/star.png" alt="" class="star">
+                          </div>
+                          <h1 style="color: #00b4d8;">Rashid Skion</h1>
+                      </div>
+                  </div>
+                  <!-- Carousel Controls -->
+                  <a class="carousel-control left carousel-control-prev" href="#nyCarousel" data-slide="prev">
+                      <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="carousel-control right carousel-control-next" href="#nyCarousel" data-slide="next">
+                      <i class="fa fa-angle-right"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
     <!-- Testimonial End -->
         
 
