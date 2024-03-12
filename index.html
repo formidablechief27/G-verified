@@ -36,8 +36,166 @@
             rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             /* Add this CSS to your existing styles */
+            .section-services {
+                font-family: "Open Sans", sans-serif;
+
+                color: #202020;
+                padding-top: 115px;
+                padding-bottom: 120px;
+            }
+
+            .section-services .header-section {
+                margin-bottom: 34px;
+            }
+
+            .section-services .header-section .title {
+                position: relative;
+                padding-bottom: 14px;
+                margin-bottom: 25px;
+                font-weight: 700;
+                font-size: 32px;
+            }
+
+            .section-services .header-section .title:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 3px;
+                background-color: #ff4500;
+                border-radius: 3px;
+            }
+
+            .section-services .header-section .title:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(30px);
+                width: 10px;
+                height: 3px;
+                background-color: #504f93;
+                border-radius: 3px;
+            }
+
+            .section-services .header-section .description {
+                font-size: 14px;
+                color: #282828;
+            }
+
+            .section-services .single-service {
+                position: relative;
+                margin-top: 30px;
+                background-color: #e1f8fe6b;
+                border-radius: 10px;
+                padding: 40px 30px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .section-services .single-service .content {
+                position: relative;
+                z-index: 20;
+            }
+
+            .section-services .single-service .circle-before {
+                position: absolute;
+                top: 0;
+                right: 0px;
+                transform: translate(40%, -40%);
+                width: 150px;
+                height: 150px;
+                background-color: #00758d;
+                border: 6px solid #000000;
+                border-radius: 50%;
+                opacity: 0.5;
+                z-index: 10;
+                transition: all .6s;
+            }
+
+            .section-services .single-service:hover .circle-before {
+                width: 100%;
+                height: 100%;
+                transform: none;
+                border: 0;
+                border-radius: 0;
+                opacity: 1;
+            }
+
+            .section-services .single-service .icon {
+                display: inline-block;
+                margin-bottom: 26px;
+                width: 70px;
+                height: 70px;
+                background-color: #00758d;
+                border-radius: 5px;
+                line-height: 70px;
+                text-align: center;
+                color: #fff;
+                font-size: 30px;
+                transition: all .3s;
+            }
+
+            .section-services .single-service:hover .icon {
+                background-color: #fff;
+                color: #00758d;
+            }
+
+            .section-services .single-service .title {
+                margin-bottom: 18px;
+                font-weight: 700;
+                font-size: 23px;
+                transition: color .3s;
+            }
+
+            .section-services .single-service:hover .title {
+                color: #fff;
+            }
+
+            .section-services .single-service .description {
+                margin-bottom: 20px;
+                font-size: 14px;
+                transition: color .3s;
+            }
+
+            .section-services .single-service:hover .description {
+                color: #fff;
+            }
+
+            .section-services .single-service a {
+                position: relative;
+                font-size: 18px;
+                color: #202020;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color .3s;
+            }
+
+            .section-services .single-service:hover a {
+                color: #fff;
+            }
+
+            .section-services .single-service a:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: #ff4500;
+                transition: background-color .3s;
+            }
+
+            .section-services .single-service:hover a:after {
+                background-color: #fff;
+            }
 
             /* Star section styles */
             .star-section {
@@ -258,89 +416,139 @@
         <!-- Facts End -->
 
         <!-- Service Start -->
-        <div class="container-xxl py-5">
+        <section class="section-services">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">Our Services</h4>
-                    <h1 class="display-5 mb-4">We Focused On Modern Architecture And Interior Design</h1>
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10 col-lg-8">
+                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+                            style="max-width: 600px;">
+                            <h4 class="section-title">Our Services</h4>
+                            <h1 class="display-5 mb-4">We focus on Building & Promoting Your Brand.</h1>
+                        </div>
+                    </div>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-1.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-5.png" alt="Icon">
-                                <h3 class="mb-3">Architecture</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                          <div class="content">
+                            <span class="icon">
+                              <i class="fa-solid fa-bullseye"></i>
+                            </span>
+                            <h3 class="title">Marketing Strategy</h3>
+                            <p class="description">Marketing strategy is a plan that outlines how a business will promote and sell
+                              its products or services, targeting specific audiences and using various tactics to achieve its
+                              overall objectives.</p>
+            
+                          </div>
+                          <span class="circle-before"></span>
+                        </div>
+                      </div>
+                    <!-- Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="content">
+                                <span class="icon">
+                                    <i class="fa-brands fa-searchengin"></i>
+                                </span>
+                                <h3 class="title">SEO (Search Engine Optimization)</h3>
+                                <p class="description">SEO, or Search Engine Optimization, is the practice of optimizing
+                                    a website to
+                                    rank higher in search engine results, increasing visibility and attracting more
+                                    organic traffic.</p>
+
                             </div>
+                            <span class="circle-before"></span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-2.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-6.png" alt="Icon">
-                                <h3 class="mb-3">3D Animation</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    <!-- / End Single Service -->
+                    <!-- Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="content">
+                                <span class="icon">
+                                    <i class="fa-solid fa-gears"></i>
+                                </span>
+                                <h3 class="title">Technical SEO</h3>
+                                <p class="description">Technical SEO involves optimizing the technical aspects of a
+                                    website to improve
+                                    its search engine performance, focusing on factors like site structure, code, for
+                                    better visibility
+                                    and user experience.</p>
+
                             </div>
+                            <span class="circle-before"></span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-3.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-7.png" alt="Icon">
-                                <h3 class="mb-3">House Planning</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    <!-- / End Single Service -->
+                    <!-- Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="content">
+                                <span class="icon">
+                                    <i class="fa-solid fa-money-check"></i>
+                                </span>
+                                <h3 class="title">PPC (Pay Per Click)</h3>
+                                <p class="description">Pay Per Click, is an online advertising strategy where
+                                    advertisers pay
+                                    for each click on their ads.Advertisers bid on keywords, and when users search for
+                                    them, the ads are
+                                    displayed. </p>
+
                             </div>
+                            <span class="circle-before"></span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-4.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-8.png" alt="Icon">
-                                <h3 class="mb-3">Interior Design</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    <!-- / End Single Service -->
+                   
+                    <!-- Single Service -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="content">
+                                <span class="icon">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </span>
+                                <h3 class="title">Content Strategy & Marketing</h3>
+                                <p class="description">Content strategy and marketing involve planning and creating
+                                    relevant content to
+                                    engage a target audience. It plays a crucial role in establishing a strong online
+                                    presence and
+                                    fostering
+                                    customer relationships.</p>
+
                             </div>
+                            <span class="circle-before"></span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-5.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-9.png" alt="Icon">
-                                <h3 class="mb-3">Renovation</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    
+                    
+                 
+                    <div class="col-md-6 col-lg-4">
+                        <div class="single-service">
+                            <div class="content">
+                                <span class="icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </span>
+                                <h3 class="title">Web Design</h3>
+                                <p class="description">Web design involves creating visually appealing and user-friendly
+                                    layouts for
+                                    websites, combining graphic elements for effective communication and a positive user
+                                    experience.</p>
+
                             </div>
+                            <span class="circle-before"></span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="img/service-6.jpg" alt="">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="img/icons/icon-10.png" alt="Icon">
-                                <h3 class="mb-3">Construction</h3>
-                                <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
-                                    stet diam sed stet.</p>
-                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                 
+                
+                 
                 </div>
             </div>
-        </div>
+            <div class="text-center mt-4">
+                <a href="service.html" class="btn btn-primary py-3 px-5 animated slideInLeft">View More</a>
+            </div>
+        </section>
         <!-- Service End -->
+       
 
 
         <!-- Feature Start -->
@@ -457,68 +665,68 @@
                 </div>
             </div>
         </div>
-            <!-- Testimonial End -->
+        <!-- Testimonial End -->
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
-                <div class="container py-5">
-                    <div class="row g-5">
-                        <div class="col-lg-3 col-md-6">
-                            <h3 class="text-light mb-4">Address</h3>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Ontario Canada</p>
-                            <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>95614 86909</p>
-                            <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-light mb-4">Address</h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Ontario Canada</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>95614 86909</p>
+                        <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
 
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <h3 class="text-light mb-4">Services</h3>
-                            <a class="btn btn-link" id="btn1">Marketing Strategy</a>
-                            <a class="btn btn-link" id="btn1">SEO (Search Engine Optimization)</a>
-                            <a class="btn btn-link" id="btn1">Technical SEO</a>
-                            <a class="btn btn-link" id="btn1">Content Strategy & Marketing</a>
-                            <a class="btn btn-link" id="btn1">PPC (Pay Per Click)</a>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <h3 class="text-light mb-4">Services</h3>
-                            <a class="btn btn-link" id="btn1">SEM</a>
-                            <a class="btn btn-link" id="btn1">CRO (Conversion Rate Optimization)</a>
-                            <a class="btn btn-link" id="btn1">Web Development</a>
-                            <a class="btn btn-link" id="btn1">Logo Design & Branding</a>
-                            <a class="btn btn-link" id="btn1">Analytics & Attribution</a>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <h3 class="text-light mb-4">Quick Links</h3>
-                            <a class="btn btn-link" style="cursor: pointer;" href="about.html">About Us</a>
-                            <a class="btn btn-link" style="cursor: pointer;" href="contact.html">Contact Us</a>
-                            <a class="btn btn-link" style="cursor: pointer;" href="service.html">Our Services</a>
-                            <a class="btn btn-link" style="cursor: pointer;" href="feature.html">Features</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-light mb-4">Services</h3>
+                        <a class="btn btn-link" id="btn1">Marketing Strategy</a>
+                        <a class="btn btn-link" id="btn1">SEO (Search Engine Optimization)</a>
+                        <a class="btn btn-link" id="btn1">Technical SEO</a>
+                        <a class="btn btn-link" id="btn1">Content Strategy & Marketing</a>
+                        <a class="btn btn-link" id="btn1">PPC (Pay Per Click)</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-light mb-4">Services</h3>
+                        <a class="btn btn-link" id="btn1">SEM</a>
+                        <a class="btn btn-link" id="btn1">CRO (Conversion Rate Optimization)</a>
+                        <a class="btn btn-link" id="btn1">Web Development</a>
+                        <a class="btn btn-link" id="btn1">Logo Design & Branding</a>
+                        <a class="btn btn-link" id="btn1">Analytics & Attribution</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-light mb-4">Quick Links</h3>
+                        <a class="btn btn-link" style="cursor: pointer;" href="about.html">About Us</a>
+                        <a class="btn btn-link" style="cursor: pointer;" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link" style="cursor: pointer;" href="service.html">Our Services</a>
+                        <a class="btn btn-link" style="cursor: pointer;" href="feature.html">Features</a>
 
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer End -->
+        </div>
+        <!-- Footer End -->
 
 
-            <!-- Back to Top -->
-            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-            <!-- JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/wow/wow.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/counterup/counterup.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/tempusdominus/js/moment.min.js"></script>
-            <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-            <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-            <!-- Template Javascript -->
-            <script src="js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
     </body>
 
 </html>
