@@ -32,136 +32,107 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
         <style>
-            .member {
-                transition: transform 0.3s ease-in-out;
-                position: relative;
-            }
+            /* ------------ GOOGLE FONTS ------------ */
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-            /* Hover effect */
-            .member:hover {
-                transform: translateY(-7px);
-                /* Move the member up on hover */
-            }
+            /* ------------ VARIABLES ------------ */
+            :root {
+                /* FONT */
+                --font: 'Poppins', sans-serif;
 
-            .member:hover::before {
-                content: "";
-                position: absolute;
-                top: -5px;
-                left: -5px;
-                right: -5px;
-                bottom: -5px;
-
-                z-index: -1;
-            }
-
-            .team-bg {
-
-                overflow: hidden;
-            }
-
-            .team .section-title {
-                padding-bottom: 0px;
-            }
-
-            .team .section-title .main-team-subheading {
-                font-size: 14px;
-                font-weight: 500;
-                padding: 0;
-                line-height: 1px;
-                margin: 0 0 5px 0;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: #aaaaaa;
+                /* COLORS */
+                --color: #00b4d8;
+                --bg-color: #f4f4f4;
             }
 
 
-            .team .member {
-                position: relative;
-                margin: 5px;
-                padding: 30px;
-                border-radius: 10px;
-                background: #fff;
-                border: 3px solid #08b1d7;
+
+
+            /* ----------- SLIDER ------------ */
+            .swiper {
+                width: 100%;
             }
 
-            .team .member .pic {
-                overflow: hidden;
-                width: 100px;
-                border-radius: 4px;
-            }
-
-            .team .member .member-info {
-                padding-left: 30px;
-            }
-
-            .team .member .member-heading {
-
-                margin-bottom: 5px;
-                font-size: 30px;
-                color: #556270;
-                line-height: 1.2;
-
-            }
-
-            .team .member span {
-                display: block;
-                font-size: 20px;
-                padding-bottom: 10px;
-                position: relative;
-                font-weight: 500;
-                color: #08b1d7;
-            }
-
-            .team .member span::after {
-                content: '';
-                position: absolute;
-                display: block;
-                width: 50px;
-                height: 1px;
-                background: #dee2e6;
-                bottom: 0;
-                left: 0;
-            }
-
-            .team .member .member-para {
-                margin: 10px 0 0 0;
-                font-size: 14px;
-            }
-
-            .team .member .social {
-                margin-top: 12px;
+            .swiper-wrapper {
+                width: 100%;
+                height: 35em;
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
             }
 
-            .team .member .social a {
-                transition: ease-in-out 0.3s;
+            .card {
+                width: 20em;
+                height: 90%;
+                background-color: #fff;
+                border-radius: 2em;
+                box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+                padding: 2em 1em;
+
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                border-radius: 4px;
-                width: 32px;
-                height: 32px;
-                background: #8795a4;
+                flex-direction: column;
+
+                margin: 0 2em;
             }
 
-            .team .member .social a+a {
-                margin-left: 8px;
+            .swiper-slide:not(.swiper-slide-active) {
+                filter: blur(1px);
             }
 
-            .team .member .social a:hover {
-                background: #41A1FD;
+            .card__image {
+                width: 10em;
+                height: 10em;
+                border-radius: 50%;
+                border: 5px solid var(--color);
+                padding: 3px;
+                margin-bottom: 2em;
             }
 
-            .team .member .social a .team-icon {
+            .card__image img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .card__content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .card__title {
+                font-size: 1.5rem;
+                font-weight: 500;
+                position: relative;
+                top: .2em;
+            }
+
+            .card__name {
+                color: var(--color);
+            }
+
+            .card__text {
+                text-align: center;
+                font-size: 15px;
+                margin: 1em 0;
+            }
+
+            .card__btn {
+                background-color: var(--color);
                 color: #fff;
-                font-size: 16px;
-                margin: 0 2px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                border: none;
+                padding: .5em;
+                border-radius: .5em;
+                margin-top: .5em;
+                cursor: pointer;
             }
-
             .text-primary {
                 color: #00b4d8 !important;
             }
@@ -344,128 +315,100 @@
 
 
         <!-- Team Start -->
-        <section id="team" class="team team-bg py-5">
-            <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h4 class="section-title">Team Members</h4>
+            <h1 class="display-5 mb-4">We Are Dedicated Team </h1>
+        </div>
+        <section class="swiper mySwiper">
 
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="section-title">Team Members</h4>
-                    <h1 class="display-5 mb-4">We Are Dedicated Team </h1>
+            <div class="swiper-wrapper">
+
+                <div class="card swiper-slide">
+                    <div class="card__image">
+                        <img src="img/user.png" alt="card image">
+                    </div>
+                    <div class="card__content">
+                        <span class="card__title">Harsh Mishra</span>
+                        <span class="card__name">Managing Director</span>
+                        <p class="card__text">Meet Harsh Mishra, our accomplished partner with 5 years of expertise in
+                            sales and client management. As a dynamic leader, Harsh facilitates seamless communication
+                            and collaboration among investors, partners, clients, and employees, driving our company's
+                            success with continuous efforts. </p>
+
+                    </div>
                 </div>
 
-                <div class="row">
+                <div class="card swiper-slide">
 
-                    <div class="col-lg-6 mx-auto">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h1 class="member-heading"> <strong style="font-weight: 700;color: black;">Harsh
-                                        Mishra</strong> </h1>
-                                <span>Managing Director</span>
-                                <p class="member-para">Introducing Harsh Mishra, our esteemed partner and the face of
-                                    our company. With 5 years of experience in sales and client management, Harsh brings
-                                    a wealth of personal expertise to the table. As a true leader, Harsh serves as a
-                                    link between investors, partners, clients, and employees, ensuring smooth
-                                    communication and collaboration. Leading from the front, Harsh's continuous efforts
-                                    drive our company's success. </p>
-                                <div class="social">
-
-                                    <a href=""><i class="fab fa-instagram team-icon"></i></a>
-                                    <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card__image">
+                        <img src="img/user.png" alt="card image">
                     </div>
+                    <div class="card__content">
+                        <span class="card__title">Pratham
+                            Shah</span>
+                        <span class="card__name">Senior Analyst</span>
+                        <p class="card__text">Introducing Pratham Shah, our media expert and star performer with 3 years
+                            of outstanding experience. Pratham has quickly become an invaluable asset, showcasing
+                            dedication, teamwork, and a talent for crafting compelling media strategies. His exceptional
+                            contributions has impact on
+                            our team.</p>
 
-
-                    <div class="col-lg-6 mx-auto">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h1 class="member-heading"> <strong style="font-weight: 700;color: black;">Pratham
-                                        Shah</strong> </h1>
-                                <span>Senior Analyst</span>
-                                <p class="member-para">Meet Pratham Shah, our star performer and media expert with 3
-                                    years of experience. In a short span of time, Pratham has proven to be an invaluable
-                                    asset to our team. With a combination of hard work, dedication, and a knack for
-                                    teamwork, Pratham consistently delivers outstanding results. Whether it's crafting
-                                    compelling media strategies or leading the way in executing successful campaigns,
-                                    Pratham's expertise shines through. </p>
-                                <div class="social">
-
-                                    <a href=""><i class="fab fa-instagram team-icon"></i></a>
-                                    <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="col-lg-6 mx-auto">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h1 class="member-heading"><strong style="font-weight: 700;color: black;">Nabil
-                                        Khan</strong> </h1>
-                                <span>Sales Manager </span>
-                                <p class="member-para">Meet Nabil Khan, our stellar sales expert with 8 years of
-                                    experience in the field. With his impressive track record and knack for building
-                                    strong client relationships, Nabil is the driving force behind our sales success.
-                                    His dedication, expertise, and passion for delivering exceptional service make him
-                                    an invaluable member of our team. </p>
-                                <div class="social">
-
-                                    <a href=""><i class="fab fa-instagram team-icon"></i></a>
-                                    <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-6 mx-auto">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h1 class="member-heading"><strong style="font-weight: 700;color: black;">Harshita
-                                        Chiplunkar</strong> </h1>
-
-                                <span> Senior Executive</span>
-                                <p class="member-para">Meet Harshita Chiplunkar, our brilliant analyst with a
-                                    remarkable 6-year journey in the field. Harshita's analytical prowess combined with
-                                    her creative thinking sets her apart as a true asset to our company. With her keen
-                                    eye for detail and innovative mindset, she consistently brings fresh perspectives to
-                                    our projects.</p>
-                                <div class="social">
-
-                                    <a href=""><i class="fab fa-instagram team-icon"></i></a>
-                                    <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mx-auto">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/user.png" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h1 class="member-heading"> <strong style="font-weight: 700;color: black;"> Mukesh
-                                        Bissa</strong> </h1>
-                                <span>Partner </span>
-                                <p class="member-para">Meet Mukesh Bissa, our incredible sleeping partner who plays a
-                                    major role in driving our company's growth. With a keen focus on expanding our
-                                    presence in the United States and Canada, Mukesh has been instrumental in helping
-                                    our company thrive in these markets. His strategic insights and contributions have
-                                    been invaluable to our success. </p>
-                                <div class="social">
-
-                                    <a href=""><i class="fab fa-instagram team-icon"></i></a>
-                                    <a href=""> <i class="fab fa-linkedin-in team-icon"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
 
+                <div class="card swiper-slide">
+                    <div class="card__image">
+                        <img src="img/user.png" alt="card image">
+                    </div>
+
+                    <div class="card__content">
+                        <span class="card__title">Nabil
+                            Khan</span>
+                        <span class="card__name">Sales Manager</span>
+                        <p class="card__text">Meet Nabil Khan, our stellar sales expert with 8 years of
+                            experience in the field. With his impressive track record and knack for building
+                            strong client relationships, Nabil is the driving force behind our sales success.
+                            His dedication, expertise, and passion for delivering exceptional service make him
+                            an invaluable member of our team.</p>
+
+                    </div>
+                </div>
+
+                <div class="card swiper-slide">
+                    <div class="card__image">
+                        <img src="img/user.png" alt="card image">
+                    </div>
+
+
+                    <div class="card__content">
+                        <span class="card__title">Harshita
+                            Chiplunkar</span>
+                        <span class="card__name">Senior Executive</span>
+                        <p class="card__text">Meet Harshita Chiplunkar, our brilliant analyst with a
+                            remarkable 6-year journey in the field. Harshita's analytical prowess combined with
+                            her creative thinking sets her apart as a true asset to our company. With her keen
+                            eye for detail and innovative mindset, she consistently brings fresh perspectives to
+                            our projects.</p>
+
+                    </div>
+                </div>
+
+                <div class="card swiper-slide">
+                    <div class="card__image">
+                        <img src="img/user.png" alt="card image">
+                    </div>
+                    <div class="card__content">
+                        <span class="card__title">Mukesh
+                            Bissa</span>
+                        <span class="card__name">Partner </span>
+                        <p class="card__text">Meet Mukesh Bissa, our incredible sleeping partner who plays a
+                            major role in driving our company's growth. With a keen focus on expanding our
+                            presence in the United States and Canada, Mukesh has been instrumental in helping
+                            our company thrive in these markets. His contributions have
+                            been invaluable to our success.</p>
+                      
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Team End -->
@@ -532,6 +475,28 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            });
+        </script>
     </body>
 
 </html>
